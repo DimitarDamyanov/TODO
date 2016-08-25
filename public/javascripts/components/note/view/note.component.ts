@@ -19,6 +19,10 @@ export class NoteComponent{
 
     constructor(private noteService: NoteService){}
 
+    ngOnInit(){
+       this.status === 'Completed' ? this.completed = true :  this.completed = false;
+    }
+
     changeEditable(){
         this.editable = !this.editable;
     }
@@ -29,12 +33,14 @@ export class NoteComponent{
             task : this.task,
             status : this.status
         };
-
         this.noteService.updateNote(note);
-
-        this.editable = !this.editable;
     }
-    
+
+    editTask(){
+        this.editable = !this.editable;
+        this.updateNote();
+    }
+
     removeNote(id){
         console.log(id);
         this.noteService.deleteNote(id);
@@ -42,10 +48,12 @@ export class NoteComponent{
     
     setTaskStatus(){
         this.completed = !this.completed;
+        this.completed ? this.status = "Completed" : this.status = "New"
     }
 
     //handle status changing events
     changeTaskStatus(ev){
         this.setTaskStatus();
+        this.updateNote();
     }
 }

@@ -32,8 +32,7 @@ System.register(['angular2/core', 'angular2/http', "./note/note.list.component",
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = "TODO Application";
-                    this.subtitle = "Simple application 123";
+                    this.title = "TODO App";
                 }
                 AppComponent = __decorate([
                     core_1.Component({

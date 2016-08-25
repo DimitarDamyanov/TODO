@@ -29,6 +29,9 @@ System.register(["angular2/core", "../note.service"], function(exports_1, contex
                     this.completed = false;
                     this.editable = false;
                 }
+                NoteComponent.prototype.ngOnInit = function () {
+                    this.status === 'Completed' ? this.completed = true : this.completed = false;
+                };
                 NoteComponent.prototype.changeEditable = function () {
                     this.editable = !this.editable;
                 };
@@ -39,7 +42,10 @@ System.register(["angular2/core", "../note.service"], function(exports_1, contex
                         status: this.status
                     };
                     this.noteService.updateNote(note);
+                };
+                NoteComponent.prototype.editTask = function () {
                     this.editable = !this.editable;
+                    this.updateNote();
                 };
                 NoteComponent.prototype.removeNote = function (id) {
                     console.log(id);
@@ -47,10 +53,12 @@ System.register(["angular2/core", "../note.service"], function(exports_1, contex
                 };
                 NoteComponent.prototype.setTaskStatus = function () {
                     this.completed = !this.completed;
+                    this.completed ? this.status = "Completed" : this.status = "New";
                 };
                 //handle status changing events
                 NoteComponent.prototype.changeTaskStatus = function (ev) {
                     this.setTaskStatus();
+                    this.updateNote();
                 };
                 __decorate([
                     core_1.Input(), 

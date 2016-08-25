@@ -17,6 +17,5 @@ import {NoteService} from './note/note.service'
 })
 
 export class AppComponent{
-    title: string = "TODO Application";
-    subtitle: string = "Simple application 123";
+    title: string = "TODO App";
 }

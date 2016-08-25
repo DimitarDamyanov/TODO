@@ -21,6 +21,7 @@ var NoteRoutes = function (Note) {
         Note.findOne({_id: req.params.id}, function (err, note) {
             if(err){
                 //log the error just for now
+                console.log(err);
                 res.status(500);
                 res.json(err);
             }

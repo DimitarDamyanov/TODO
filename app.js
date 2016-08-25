@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 
 var partials = require('./routes/partials');
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var Note = require('./models/Note');
 var NoteRoute = require('./routes/note')(Note);
@@ -31,7 +30,6 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/', partials);
 app.use('/note', NoteRoute);
 
