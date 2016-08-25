@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/node_modules/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js")
+    script(src="node_modules/es6-shim/es6-shim.min.js")
+    script(src="node_modules/systemjs/dist/system-polyfills.js")
+    script(src="node_modules/angular2/bundles/angular2-polyfills.js")
+    script(src="node_modules/systemjs/dist/system.src.js")
+    script(src="node_modules/rxjs/bundles/Rx.js")
+    script(src="node_modules/angular2/bundles/angular2.dev.js")
+    script(serc="node_modules/bootstrap/dist/js/bootstrap.min.js")
+    script(src="node_modules/angular2/bundles/http.dev.js")
+    //script(src="javascripts/app.js")
+    script(type="text/javascript").
+      System.config({packages: {javascripts: {format: 'register',defaultExtension: 'js'}}, exclude: "node_modules"});
+      System.import('javascripts/app').then(null, console.error.bind(console));
+  body
+    block content

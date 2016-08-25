@@ -1,0 +1,13 @@
+.completed {
+    color: green;
+    text-decoration: line-through;
+}
+
+.remove-note:hover {
+    cursor: pointer;
+    font-size: larger;
+    border: solid;
+    border-width: medium;
+    border-radius: 50%;
+    padding: 5%;
+}

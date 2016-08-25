@@ -1,0 +1,10 @@
+.row
+    .col-md-1
+        input(type="checkbox" "[checked]"="comboBoxVal" "(click)" = "changeTaskStatus($event)" )
+    .col-md-9
+        div(*ngIf="!editable")
+            p( [ngClass] = "{completed: completed}" "(dblclick)" = "changeEditable()"  ) {{task}}
+        div(*ngIf="editable")
+            input.form-control(type="text" "[(ngModel)]" = "task" "(focusout)"="updateNote()")
+    .col-md-2
+        span.pull-right.glyphicon.glyphicon-remove.remove-note("(click)" = "removeNote(_id)")

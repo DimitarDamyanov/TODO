@@ -1,0 +1,4 @@
+.list-group
+    //a.list-group-item(*ngFor = "let note of notes"  "(click)"="noteClicked($event)" )
+    a.list-group-item(*ngFor = "let note of notes")
+        note("[task]" = "note.task" "[status]" = "note.status" "[_id]" = "note._id")
